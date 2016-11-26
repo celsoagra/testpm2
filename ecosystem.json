@@ -29,7 +29,7 @@
       ref  : "origin/master",
       repo : "git@github.com:repo.git",
       path : "/var/www/production",
-      "post-deploy" : "npm install && pwd && pm2 startOrRestart ecosystem.json --env production"
+      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production"
     },
     dev : {
       user : "vagrant",
@@ -37,7 +37,7 @@
       ref  : "origin/master",
       repo : "https://github.com/celsoagra/testpm2.git",
       path : "/var/lib/development",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env dev",
+      "post-deploy" : "npm install && pwd && pm2 startOrRestart ecosystem.json --env dev",
       env  : {
         NODE_ENV: "dev"
       }
