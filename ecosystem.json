@@ -8,7 +8,7 @@
     // First application
     {
       name      : "testpm2",
-      script    : "../index.js",
+      script    : "pwd && ls -l && ../index.js",
       env: {
         COMMON_VARIABLE: "true"
       },
@@ -37,7 +37,7 @@
       ref  : "origin/master",
       repo : "https://github.com/celsoagra/testpm2.git",
       path : "/var/lib/development",
-      "post-deploy" : "npm install && pwd && ls -l && pm2 startOrRestart /var/lib/development/ecosystem.json --env dev",
+      "post-deploy" : "npm install && pm2 startOrRestart /var/lib/development/ecosystem.json --env dev",
       env  : {
         NODE_ENV: "dev"
       }
